@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> NEXBYTE 2K26 | V.R.S College</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(120deg, #ff512f, #dd2476);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.4s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: #ffcc70;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li::before {
+            content: "✔ ";
+            color: #00ffcc;
+        }
+
+        .info-box {
+            text-align: center;
+            background: #111;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>NEXBYTE 2K26</h1>
+    <p>National Level Technical Symposium</p>
+    <p><strong>V.R.S College of Engineering and Technology</strong></p>
+    <div class="countdown" id="countdown"></div>
+</header>
+
+<section>
+    <h2>📅 Event Details</h2>
+    <div class="info-box">
+        <p><strong>Date:</strong> March 15, 2026</p>
+        <p><strong>Time:</strong> 9:00 AM – 4:30 PM</p>
+        <p><strong>Venue:</strong> V.R.S College Campus</p>
+    </div>
+</section>
+
+<section>
+    <h2>💻 Technical Events</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>📄 Paper Presentation</h3>
+            <p>Present innovative ideas and research papers.</p>
+        </div>
+        <div class="card">
+            <h3>🧠 Tech Quiz</h3>
+            <p>Test your technical knowledge.</p>
+        </div>
+        <div class="card">
+            <h3>💡 Project Expo</h3>
+            <p>Showcase your working models.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>🎮 Non-Technical Events</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>🎤 Connections</h3>
+            <p>Fun linking words & pictures.</p>
+        </div>
+        <div class="card">
+            <h3>😂 Meme Creation</h3>
+            <p>Create the best trending meme.</p>
+        </div>
+        <div class="card">
+            <h3>🎶 Guess the Song</h3>
+            <p>Identify songs in seconds.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>📜 Rules & Regulations</h2>
+    <div class="card">
+        <ul>
+            <li>Participants must wear College ID Card</li>
+            <li>Team size: Minimum 2 – Maximum 3 members</li>
+            <li>On-spot registration is not allowed</li>
+            <li>Decision of judges will be final</li>
+            <li>Participants should report on time</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>📝 Registration</h2>
+    <div class="info-box">
+        <a href="https://forms.google.com" target="_blank" class="btn">Register Now</a>
+        <a href="https://chat.whatsapp.com" target="_blank" class="btn">Join WhatsApp Group</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 TECHNOVA | V.R.S College of Engineering and Technology</p>
+    <p>Designed for Internship Project 🚀</p>
+</footer>
+
+<script>
+    const eventDate = new Date("March 15, 2026 09:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = eventDate - now;
+
+        if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            countdownEl.innerHTML = `⏳ Event Starts In: ${days}d ${hours}h ${minutes}m`;
+        } else {
+            countdownEl.innerHTML = "🎉 Event Started!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
